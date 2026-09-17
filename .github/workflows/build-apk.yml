@@ -24,17 +24,14 @@ jobs:
           distribution: 'zulu'
           java-version: 17
 
-      
-    
-
       - name: Install Dependencies & Build Web Project
         run: |
-          npm install
+          npm install --legacy-peer-deps
           npm run build
 
       - name: Setup Capacitor
         run: |
-          npm install @capacitor/core @capacitor/cli @capacitor/android
+          npm install --legacy-peer-deps @capacitor/core @capacitor/cli @capacitor/android
           npx cap init "FrameForge" "com.frameforge.app" --web-dir "dist"
           npx cap add android
           npx cap sync android
