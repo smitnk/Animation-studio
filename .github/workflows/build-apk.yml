@@ -32,7 +32,7 @@ jobs:
       - name: Setup Capacitor
         run: |
           npm install --legacy-peer-deps @capacitor/core @capacitor/cli @capacitor/android
-          npx cap init "FrameForge" "com.frameforge.app" --web-dir "dist"
+          echo '{"appId":"com.frameforge.app","appName":"FrameForge","webDir":"dist"}' > capacitor.config.json
           npx cap add android
           npx cap sync android
 
