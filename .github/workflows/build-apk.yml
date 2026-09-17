@@ -36,6 +36,11 @@ jobs:
           npx cap add android
           npx cap sync android
 
+      - name: Fix Kotlin Duplicate Classes
+        run: |
+          echo "android.enableJetifier=true" >> android/gradle.properties
+          sed -i '/android {/a \    configurations.all { resolutionStrategy { force "org.jetbrains.kotlin:kotlin-stdlib:1.8.22", "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.22", "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22" } }' android/app/build.gradle
+
       - name: Build Debug APK
         run: |
           cd android
