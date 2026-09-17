@@ -1,0 +1,6 @@
+{
+  "name": "FrameForge",
+  "description": "Professional Android 2D frame-by-frame animation studio with multi-layer drawing, customizable onion skinning, real-time timeline playback, and multi-format export.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
